@@ -6,6 +6,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {StatsContainer, StatsRow, StatsBox, StatsBoxTitle} from './styles';
 import {parseISO, formatRelative} from 'date-fns';  // biblioteca que meche com datas
 import ptBR from 'date-fns/locale/pt-BR';
+import vars from '../../configs/vars';
 
 class statsPage extends React.Component{
     constructor(props){
@@ -53,7 +54,7 @@ class statsPage extends React.Component{
                     </StatsContainer>
                 ) : (
                     <StatsContainer className='text-center'>
-                        <p><b>https://micro_saas.tk/{shortenedURL.cod}</b></p>
+                        <p><b>{vars.HOST_APP + shortenedURL.cod}</b></p>
                         <p>Redireciona para: <br/>{shortenedURL.url}</p>
                         <StatsRow>
                             <StatsBox>

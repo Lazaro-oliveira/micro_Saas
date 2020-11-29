@@ -3,6 +3,7 @@ import Header from '../../components/header/index';// componentes sempre devem s
 import { ContentContainer, Form, AdsBlock } from './styles';
 import { Container, InputGroup, FormControl, Button, Alert, Spinner } from 'react-bootstrap';
 import ShortenerService from '../../services/shortenerService';
+import vars from '../../configs/vars';
 
 class homePage extends React.Component {
     constructor(props) {
@@ -69,14 +70,14 @@ class homePage extends React.Component {
                                         <InputGroup className='mb-3'>
                                             <FormControl
                                                 autoFocus = {true} //da foco direto nesse input
-                                                defaultValue = {`https://micro_saas.tk/${cod}`}
+                                                defaultValue = {vars.HOST_APP + cod}
                                                 ref = { (input) => this.inputURL = input}
                                             />
                                             <InputGroup.Append>
                                                 <Button variant="outline-secondary" onClick = { () => this.copyToClipboard()}>Copiar</Button>
                                             </InputGroup.Append>
                                         </InputGroup>
-                                        <p>Para acompanhar as estatisticas, acesse https://micro_saas.tk/{cod} </p>
+                                        <p>Para acompanhar as estatisticas, acesse {vars.HOST_APP + cod} </p>
                                     </>
                                 )
                             )
